@@ -1,0 +1,80 @@
+{%extends 'base.html' %} {%block content%}
+<!-- contact info section starts  -->
+
+<section class="info-container">
+  <div class="box-container">
+    <div class="box">
+      <i class="fas fa-map"></i>
+      <h3>address</h3>
+      <p>Parul University</p>
+    </div>
+
+    <div class="box">
+      <i class="fas fa-envelope"></i>
+      <h3>email</h3>
+      <p>210510113141@paruluniversity.ac.in</p>
+      <p>210510113121@paruluniversity.ac.in</p>
+      <p>210510126024@paruluniversity.ac.in</p>
+    </div>
+
+    <div class="box">
+      <i class="fas fa-phone"></i>
+      <h3>number</h3>
+      <p>000000000000000</p>
+      <p>000000000000000</p>
+      <p>000000000000000</p>
+    </div>
+  </div>
+</section>
+
+<!-- contact info section ends -->
+
+<!-- contact section starts  -->
+
+<section class="contact">
+  <form method="POST">
+    {% csrf_token%}
+    <h3>Give Feedback</h3>
+    <p>
+      If you have any query or you want to give some feedback for improving our
+      website or if you want to feature some product on our website you can
+      contact us
+    </p>
+    <div class="inputBox">
+      <input type="text" name="name" placeholder="your name" required />
+      <input type="email" name="email" placeholder="your email" required />
+    </div>
+    <div class="inputBox">
+      <input type="number" name="number" placeholder="your number" required />
+      <input type="text" name="subject" placeholder="subject" required />
+    </div>
+    <textarea
+      name="msg"
+      placeholder="your message"
+      id=""
+      cols="30"
+      rows="10"
+      required
+    ></textarea>
+    <input type="submit" value="send" class="btn" name="contactFormSubmit" />
+  </form>
+  {% for message in messages %} {% if message.tags == 'info' %}
+  <script>
+    window.onload = function () {
+      alert("{{message}}");
+    };
+  </script>
+  {% endif %} {% endfor %}
+
+  <iframe
+    class="map"
+    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=parul%20university+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+    loading="lazy"
+  ></iframe>
+</section>
+
+<!-- contact section ends -->
+
+<!-- newsletter section starts  -->
+<!-- newsletter section ends -->
+{%endblock content%}

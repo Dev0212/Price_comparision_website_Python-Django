@@ -1,0 +1,152 @@
+.main-container {
+  width: 50%;
+  background-color: white;
+  margin: 10% auto;
+  border-radius: 2em;
+  padding: 2em 2em;
+}
+
+.container {
+  display: flex;
+  margin: 2em 2em;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-photo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-photo-container img {
+  width: 10em;
+  height: 10em;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0.5em auto;
+}
+
+.user-content-container {
+  display: flex;
+  flex-direction: column;
+  margin: 2em;
+  padding-left: 2em;
+}
+
+.username {
+  font-size: 2em;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+.user-title {
+  font-size: 1.6em;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.876);
+  margin: 5px 0;
+  width: 80%;
+  line-height: 1.3em;
+}
+
+.user-desc {
+  font-size: 0.9em;
+  color: #4b4b4b;
+  margin: 4px auto 4px 0;
+}
+
+.profile-edit-link-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.profile-edit-link-container a {
+  text-decoration: none;
+  color: #1a0dab;
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    display: block;
+    font-size: 18px;
+  }
+
+  .main-container {
+    padding: 2em 1.5em;
+  }
+
+  .user-content-container {
+    padding-left: 0;
+    width: 60%;
+  }
+
+  .profile-photo-container {
+    width: 100%;
+    margin: auto;
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .user-content-container {
+    margin: 2em auto;
+  }
+
+  .user-title {
+    width: 100%;
+  }
+
+  .main-container {
+    margin: 10% auto;
+    width: 75%;
+  }
+
+  .header-username {
+    display: none;
+  }
+
+  .profile-photo-container {
+    width: 100%;
+  }
+}
+.form-control:focus {
+  box-shadow: none;
+  border-color: #ba68c8;
+}
+
+.profile-button {
+  background: rgb(99, 39, 120);
+  box-shadow: none;
+  border: none;
+}
+
+.profile-button:hover {
+  background: #682773;
+}
+
+.profile-button:focus {
+  background: #682773;
+  box-shadow: none;
+}
+
+.profile-button:active {
+  background: #682773;
+  box-shadow: none;
+}
+
+.back:hover {
+  color: #682773;
+  cursor: pointer;
+}
+
+.labels {
+  font-size: 11px;
+}
+
+.add-experience:hover {
+  background: #ba68c8;
+  color: #fff;
+  cursor: pointer;
+  border: solid 1px #ba68c8;
+}

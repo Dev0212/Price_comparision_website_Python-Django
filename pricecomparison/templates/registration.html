@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<section class="register">
+  <form action="{% url 'register' %}" method="POST">
+    {% csrf_token %}
+    <h3>register now</h3>
+    <input
+      type="text"
+      name="username"
+      placeholder="enter your username"
+      id=""
+      class="box"
+      required
+    />
+    <input
+      type="email"
+      name="email"
+      placeholder="enter your email"
+      id=""
+      class="box"
+      required
+    />
+    <input
+      type="password"
+      name="pwd"
+      placeholder="enter your password"
+      id=""
+      class="box"
+      required
+    />
+    <input
+      type="password"
+      name="r_pwd"
+      placeholder="re-enter your password"
+      id=""
+      class="box"
+      required
+    />
+    {% for message in messages %} {% if message.tags == 'error' %}
+    <p style="color: red">{{message}}</p>
+    {% elif message.tags == 'info' %}
+    <script>
+      window.onload = function () {
+        alert("{{message}}");
+      };
+    </script>
+    {% endif %} {% endfor %}
+    <input type="submit" value="register now" class="btn" />
+    <p>already have an account?</p>
+    <a href="{%url 'login' %}" class="btn link">login now</a>
+  </form>
+</section>
+{% endblock content %}

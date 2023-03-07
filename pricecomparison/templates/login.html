@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+<!-- login form section starts  -->
+
+{% block content %}
+
+<section class="login">
+  <form action="/login" method="POST">
+    {%csrf_token%}
+    <h3>login now</h3>
+    <input
+      type="text"
+      name="username"
+      placeholder="Enter Your Username"
+      id=""
+      class="box"
+    />
+    <input
+      type="password"
+      name="pwd"
+      placeholder="Enter Your Password"
+      id=""
+      class="box"
+    />
+    {% for message in messages %}
+    {% if message.tags == 'error' %}
+    <p style='color:red'>{{message}}</p>
+    {% elif message.tags == 'info' %}
+    <script>
+      window.onload = function(){
+        alert('{{message}}')
+      }
+    </script>
+    {% endif %}
+    {% endfor %}
+      <input type="submit" value="login now" class="btn" />
+    </p>
+
+    <p>don't have an account?</p>
+    <a href="{% url 'register' %}" class="btn link">register now</a>
+  </form>
+</section>
+{% endblock content %}
+<!-- login form section ends  -->
+{% comment %} {% extends 'base.html' %}
+
+<!-- login form section starts  -->
+{% block content %}
+<section class="login">
+  <form action="">
+    <h3>login now</h3>
+    <input
+      type="email"
+      name=""
+      placeholder="enter your email"
+      id=""
+      class="box"
+    />
+    <input
+      type="password"
+      name=""
+      placeholder="enter your password"
+      id=""
+      class="box"
+    />
+    <input type="submit" value="login now" class="btn" />
+    <p>don't have an account?</p>
+    <a href="{% url 'register' %}" class="btn link">register now</a>
+  </form>
+</section>
+{% endblock content %} {% endcomment %}
+<!-- login form section ends  -->

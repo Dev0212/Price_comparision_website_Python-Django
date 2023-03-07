@@ -1,0 +1,43 @@
+{% extends "base.html" %} {%block content%} {% load static %}
+<section class="products">
+  <div class="containter">
+    <div class="row ">
+      <div class="col-md-12 ">
+        <h1 class="heading">Up to 50% off SmartWatches</h1>
+        <hr />
+        <div class="row mb-5">
+          {% for i in offsmartwatchf|slice:":5" %}
+         <div class="col-md-3">
+            <div class="card h-100 border-dark" >
+              <img src="{{i.3}}" class="card-img-top mx-auto pt-3" style="width:58%;height:15vw;object-fit:contain;" alt="..." />
+               <hr>
+               <div class="card-body d-flex flex-column">
+               <p class="card-text"><h4>{{i.0}}</h4></p>
+                 <h3 class="card-title">{{i.1}} </h3>
+              <a href="{{i.2}}" class="btn mt-auto btn-secondary " ><img src="{%static 'images/flipkart.png' %}" style="width:30px;height:30px;border-radius:50%"> Buy &#8594</a >
+               
+              </div>
+            </div>
+          </div>
+           {% for j in offsmartwatcha|slice:":5" %}
+          <div class="col-md-3">
+            <div class="card h-100 border-dark" >
+              <img src="{{j.3}}" class="card-img-top mx-auto pt-3" style="width:58%;height:15vw;object-fit:contain;" alt="..." />
+               <hr>
+               <div class="card-body d-flex flex-column">
+               <p class="card-text"><h4>{{j.0}}</h4></p>
+                 <h3 class="card-title">{{j.1}} </h3>
+              <a href="{{j.2}}" class="btn mt-auto btn-secondary " ><img src="{%static 'images/amazon.png' %}" style="width:30px;height:30px;border-radius:50%"> Buy &#8594</a >
+               
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+           {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>
+{%endblock content%}

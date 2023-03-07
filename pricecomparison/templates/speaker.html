@@ -1,0 +1,79 @@
+{% extends 'base.html' %} {% load static%} {%block content%}
+<section class="category">
+  <h1 class="heading">shop by category</h1>
+
+  <div class="box-container">
+    <a href="{%url 'television' %}" class="box">
+      <img src="{%static 'images/cat_img1.png' %}" alt="" />
+      <h3>televisions</h3>
+    </a>
+
+    <a href="{%url 'smartphone' %}" class="box">
+      <img src="{%static 'images/cat_img2.png' %}" alt="" />
+      <h3>smartphones</h3>
+    </a>
+
+    <a href="{%url 'headphone'%}" class="box">
+      <img src="{%static 'images/cat_img3.png' %}" alt="" />
+      <h3>headphones</h3>
+    </a>
+
+    <a href="{%url 'smartwatch' %}" class="box">
+      <img src="{%static 'images/cat_img4.png' %}" alt="" />
+      <h3>smartwatches</h3>
+    </a>
+
+    <a href="{%url 'camera'%}" class="box">
+      <img src="{%static 'images/cat_img6.png' %}" alt="" />
+      <h3>camera</h3>
+    </a>
+
+    <a href="{%url 'speaker' %}" class="box">
+      <img src="{%static 'images/cat_img7.png' %}" alt="" />
+      <h3>speakers</h3>
+    </a>
+  </div>
+</section>
+<section class="products">
+  <div class="containter">
+    <div class="row ">
+      <div class="col-md-12 ">
+        <h1 class="heading">Speaker</h1>
+        <hr />
+        <div class="row mb-5">
+          {% for i in spflipkart|slice:":8" %}
+         <div class="col-md-3">
+            <div class="card h-100 border-dark" >
+              <img src="{{i.3}}" class="card-img-top mx-auto pt-3" style="width:58%;height:15vw;object-fit:contain;" alt="..." />
+               <hr>
+               <div class="card-body d-flex flex-column">
+               <p class="card-text"><h4>{{i.0}}</h4></p>
+                 <h3 class="card-title">{{i.1}} </h3>
+              <a href="{{i.2}}" class="btn mt-auto btn-secondary " ><img src="{%static 'images/flipkart.png' %}" style="width:30px;height:30px;border-radius:50%"> Buy &#8594</a >
+               
+              </div>
+            </div>
+          </div>
+           {% endfor %}
+           {% for j in spamazon|slice:":8" %}
+          <div class="col-md-3">
+            <div class="card h-100 border-dark" >
+              <img src="{{j.3}}" class="card-img-top mx-auto pt-3" style="width:58%;height:15vw;object-fit:contain;" alt="..." />
+               <hr>
+               <div class="card-body d-flex flex-column">
+               <p class="card-text"><h4>{{j.0}}</h4></p>
+                 <h3 class="card-title">{{j.1}} </h3>
+              <a href="{{j.2}}" class="btn mt-auto btn-secondary " ><img src="{%static 'images/amazon.png' %}" style="width:30px;height:30px;border-radius:50%"> Buy &#8594</a >
+               
+              </div>
+            </div>
+          </div>
+         
+           {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>
+{%endblock content%}
