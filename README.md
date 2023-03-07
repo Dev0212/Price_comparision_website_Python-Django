@@ -17,4 +17,4 @@ Contributions and feedback from the open-source community are welcomed and appre
 - Find manage.py in pricecomparison folder 
 - In the Folder Run Following command : python manage.py runserver
 
-That's it Now you're good to go...
+That's it Now you're good to go..
